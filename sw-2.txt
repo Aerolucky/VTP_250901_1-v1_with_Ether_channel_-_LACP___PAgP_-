@@ -1,0 +1,30 @@
+VTP 250901 1-v1 with Ether channel ( LACP & PAgP )
+============================
+SW-2
+
+	en 
+	conf t
+	hostname SW-2
+
+	vtp domain TESTING
+	vtp version 3 
+	vtp mode client
+	vtp password PASSWORD 
+	 
+	
+	int g0/1
+		switchport trunk encapsulation dot1q
+		switchport mode trunk
+	int g2/1
+		switchport trunk encapsulation dot1q
+		switchport mode trunk
+	int g2/0
+		switchport trunk encapsulation dot1q
+		switchport mode trunk
+	int g0/0 
+		switchport trunk encapsulation dot1q
+		switchport mode trunk
+		
+	int ra g0/0-1
+		channel-group 1 mode desirable 
+		

@@ -1,0 +1,26 @@
+
+VTP 250901 1-v1 with Ether channel ( LACP & PAgP )
+============================
+SW-3
+
+	en 
+	conf t
+	hostname SW-3
+
+	vtp domain TESTING
+	vtp version 3 
+	vtp mode transparent
+	vtp password PASSWORD 
+	
+	int g1/1
+		switchport trunk encapsulation dot1q
+		switchport mode trunk
+	int g1/2
+		switchport trunk encapsulation dot1q
+		switchport mode trunk
+	int g0/0
+		switchport trunk encapsulation dot1q
+		switchport mode trunk
+	int g1/1 
+		switchport trunk encapsulation dot1q
+		switchport mode trunk
